@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JsonShop
 {
-    internal class OnlineShop
+    internal class OnlineShop : IOnlineShop
     {
         public List<ISellItem> AllSellItems { get; set; }  //Json clothes // json med Gadegets
 
@@ -23,6 +23,7 @@ namespace JsonShop
             ItemNeedingToStock.AmountInStock += AmountOfItemsBuying;
             var spending = ItemNeedingToStock.PriceToShop * AmountOfItemsBuying;
             CalculateExpenses(spending);
+        
         }
 
         public int CalculateProfit(int Income, int Expenses)
@@ -31,16 +32,18 @@ namespace JsonShop
             return Profit;
         }
 
-        public void SellItem(ISellItem itemToSell )
+        public void SellItem(ISellItem itemToSell)
         {
             itemToSell.AmountInStock--;
-            _customer.Money -= itemToSell.PriceToCustomer;
+                _customer.Payment(itemToSell.PriceToCustomer);
+
+            
             CalculateIncome(itemToSell.PriceToCustomer);
 
         }
         public int CalculateIncome(int PriceSoldItem)
         {
-            Income += PriceSoldItem ;
+            Income += PriceSoldItem;
             return Income;
 
         }

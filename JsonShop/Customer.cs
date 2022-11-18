@@ -12,16 +12,19 @@ namespace JsonShop
         public string Name { get; set; }
         public List<IItem> ItemsBought { get; set;}
 
-        public int Money { get; private set; }
+        public int Money { get;  protected set; }
 
-        public int Id { get; set; }
+        public int Id { get; protected  set; }
 
-        private string Password;
+        public string Password { get; protected set; }
 
-        public Customer(string name, int money)
+        public Customer(string name, int money, string password, int id)
         {
             Name = name;
             Money = money;
+            Password = password;
+            Id = id;
+            //CreateId();
         }
        public void MakePassword(string Input)
         {
@@ -34,6 +37,12 @@ namespace JsonShop
             var r = random.Next(1, 10000);
             var r2 = random.Next(10000, 20000);
             Id = r + r2;
+        }
+
+
+        public void Payment(int Pricepaying)
+        {
+            Money -= Pricepaying;
         }
     }
 }

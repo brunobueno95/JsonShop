@@ -8,7 +8,11 @@ namespace JsonShop
 {
     internal interface ICustomer
     {
-        int Id { get; set; }
-        int Money { get; set; }
+        string Name { get; }
+        int Id { get;  }
+        int Money { get;  }
+        string Password { get; }
+
+        void Payment(int price);
     }
 }
