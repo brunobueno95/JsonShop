@@ -10,14 +10,18 @@ namespace JsonShop
     internal class Customer :ICustomer
     {
         public string Name { get; set; }
-        public List<IItem> ItemsBought { get; set;}
+        public List<IItem> ItemsBought { get; protected set;} = new List<IItem>();
 
         public int Money { get;  protected set; }
 
-        public int Id { get; protected  set; }
+        public int Id { get; protected set; }
 
-        public string Password { get; protected set; }
+        public string Password { get;protected set; }
 
+        public Customer()
+        {
+
+        }
         public Customer(string name, int money, string password, int id)
         {
             Name = name;
@@ -31,13 +35,17 @@ namespace JsonShop
             Password = Input;
         }
 
-        public void CreateId()
+        public void MakeId(int Input)
         {
-            Random random = new Random();
-            var r = random.Next(1, 10000);
-            var r2 = random.Next(10000, 20000);
-            Id = r + r2;
+            Id = Input;
         }
+
+        public void MakeMoney(int Input)
+        {
+            Money = Input;
+        }
+
+
 
 
         public void Payment(int Pricepaying)
