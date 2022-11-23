@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        private static List<IItem> items;
+        private static List<ISellItem> items;
         private static List<ICustomer> customers;
         static void Main(string[] args)
         {
@@ -15,7 +15,7 @@
 
         private static void FillItemsList()
         {
-            items = new List<IItem>()
+            items = new List<ISellItem>()
         {
             new Item(25, "Socks"),
             new Item(55, "Shirt"),

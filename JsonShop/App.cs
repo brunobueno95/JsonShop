@@ -14,8 +14,8 @@ namespace JsonShop
         private ICreateUserController _createUser;
         private ILogInController _logIn;
         private List<ICustomer> customerList { get; set; } 
-        private List<IItem> itemList { get; set; } 
-        public App(IOnlineShop onlineShop, ICreateUserController createUserController, ILogInController login, List<ICustomer> customers, List<IItem> items)
+        private List<ISellItem> itemList { get; set; } 
+        public App(IOnlineShop onlineShop, ICreateUserController createUserController, ILogInController login, List<ICustomer> customers, List<ISellItem> items)
         {
             _onlineShop = onlineShop;
             _createUser = createUserController;
