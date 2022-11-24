@@ -10,7 +10,7 @@ namespace JsonShop
     internal class Customer :ICustomer
     {
         public string Name { get; set; }
-        public List<IItem> ItemsBought { get; protected set;} = new List<IItem>();
+        public List<ICustomerItem> ItemsBought { get; protected set;} = new List<ICustomerItem>();
 
         public int Money { get;  protected set; }
 
@@ -40,17 +40,17 @@ namespace JsonShop
             Id = Input;
         }
 
-        public void MakeMoney(int Input)
-        {
-            Money = Input;
-        }
-
-
+      
 
 
         public void Payment(int Pricepaying)
         {
             Money -= Pricepaying;
+        }
+
+        public void MoneyAccount(int Input)
+        {
+            Money = Input; 
         }
     }
 }

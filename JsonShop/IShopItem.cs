@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JsonShop
 {
-    internal interface ISellItem : IItem
+    internal interface IShopItem : IItem
     {
         int PriceToCustomer { get; set; }
 
@@ -16,9 +16,10 @@ namespace JsonShop
 
         bool HaveOnStock { get; set; }
 
-        string Description { get;}
+        string DescriptionToCustomer();
+        string Buy(ICustomer loggedCustomer);
 
-        
+
 
 
     }

@@ -9,7 +9,7 @@ namespace JsonShop
     internal interface ICustomer
     {
         string Name { get; set; }
-        public List<IItem> ItemsBought { get;  }
+        public List<ICustomerItem> ItemsBought { get;  }
         int Id { get;  }
         int Money { get;   }
         string Password { get;   }
@@ -17,6 +17,6 @@ namespace JsonShop
         void Payment(int price);
         public void MakePassword(string Input);
         public void MakeId(int Input);
-        public void MakeMoney(int Input);
+        public void MoneyAccount(int Input);
     }
 }

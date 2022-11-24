@@ -2,7 +2,7 @@
 {
     internal interface IOnlineShop
     {
-        List<ISellItem> AllSellItems { get; set; }
+        List<IShopItem> AllSellItems { get; set; }
         int Expenses { get; }
         int Income { get; }
         int Profit { get; set; }
@@ -10,7 +10,7 @@
         int CalculateExpenses(int PricePaidToFillStock);
         int CalculateIncome(int PriceSoldItem);
         int CalculateProfit(int Income, int Expenses);
-        void FillUpStock(ISellItem ItemNeedingToStock, int AmountOfItemsBuying);
-        void SellItem(ISellItem itemToSell);
+        void FillUpStock(IShopItem ItemNeedingToStock, int AmountOfItemsBuying);
+        void SellItem(IShopItem itemToSell);
     }
 }

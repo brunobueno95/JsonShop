@@ -8,7 +8,7 @@ namespace JsonShop
 {
     internal class OnlineShop : IOnlineShop
     {
-        public List<ISellItem> AllSellItems { get; set; }  //Json clothes // json med Gadegets
+        public List<IShopItem> AllSellItems { get; set; }  //Json clothes // json med Gadegets
 
         public int Income { get; private set; }
 
@@ -18,7 +18,7 @@ namespace JsonShop
 
         private ICustomer _customer;
 
-        public void FillUpStock(ISellItem ItemNeedingToStock, int AmountOfItemsBuying)
+        public void FillUpStock(IShopItem ItemNeedingToStock, int AmountOfItemsBuying)
         {
             ItemNeedingToStock.AmountInStock += AmountOfItemsBuying;
             var spending = ItemNeedingToStock.PriceToShop * AmountOfItemsBuying;
@@ -32,7 +32,7 @@ namespace JsonShop
             return Profit;
         }
 
-        public void SellItem(ISellItem itemToSell)
+        public void SellItem(IShopItem itemToSell)
         {
             itemToSell.AmountInStock--;
                 _customer.Payment(itemToSell.PriceToCustomer);

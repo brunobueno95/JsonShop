@@ -8,8 +8,6 @@ namespace JsonShop
 {
     internal interface IItem
     {
-        int PriceToCustomer { get; set; }
-
-        string Description { get;  }
+        string Name { get; set;  }
     }
 }

@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        private static List<ISellItem> items;
+        private static List<IItem> items;
         private static List<ICustomer> customers;
         static void Main(string[] args)
         {
@@ -15,19 +15,19 @@
 
         private static void FillItemsList()
         {
-            items = new List<ISellItem>()
+            items = new List<IItem>()
         {
-            new Item(25, "Socks"),
-            new Item(55, "Shirt"),
-            new Item(35, "Baseball"),
-            new Item(105, "Gloves"),
-            new Item(207, "Nike"),
-            new Item(300, "Game"),
-            new Item(5, "Nail polish"),
-            new Item(800, "Cowboy boots"),
-            new Item(225, "Caps"),
-            new Item(5000, "Nintendo"),
-            new Item(2500, "Pokemon ball"),
+            new ShopItem(25, "Socks",true,10),
+            new ShopItem(55, "Shirt",true,10),
+            new ShopItem(35, "Baseball",true,10),
+            new ShopItem(105, "Gloves",true,10),
+            new ShopItem(207, "Nike",true,10),
+            new ShopItem(300, "Game",true,10),
+            new ShopItem(5, "Nail polish",true,10),
+            new ShopItem(800, "Cowboy boots",true,10),
+            new ShopItem(225, "Caps",true,10),
+            new ShopItem(5000, "Nintendo",true,10),
+            new ShopItem(2500, "Pokemon ball",true,10),
         };
         }
 

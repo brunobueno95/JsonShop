@@ -36,7 +36,7 @@ namespace JsonShop
         {
             Console.WriteLine("Write how much will you put on your account");
             var money = Convert.ToInt32(Console.ReadLine());
-            _customer.MakeMoney(money);
+            _customer.MoneyAccount(money);
             return money;
         }
 
@@ -50,7 +50,7 @@ namespace JsonShop
             return Id;
         }
 
-        public ICustomer CreateUser()
+        public Customer CreateUser()
         {
             var name = CreateUserName();
 
@@ -58,10 +58,12 @@ namespace JsonShop
             var money = CreateUserMoney();
             var Id = CreateUserGenerateId();
 
-
+            
+                return (Customer)_customer;
+            
             //var newUser = new Customer(name, money, password, Id);
             
-            return _customer;
+            
         }
 
 
